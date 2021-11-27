@@ -1,0 +1,3 @@
+# Inertia.js Formidable Adapter
+
+Pushing this here, before I lose it again...
