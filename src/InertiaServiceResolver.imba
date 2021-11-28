@@ -30,7 +30,7 @@ export class InertiaServiceResolver < ServiceResolver
 
 			if response instanceof InertiaRedirect then return response.handle(request, reply)
 
-			const rootView = self.app.config.get('view.rootView')
+			const rootView = self.app.config.get('inertia.rootView')
 
 			if isEmpty response._rootView then response.setRootView(rootView)
 
