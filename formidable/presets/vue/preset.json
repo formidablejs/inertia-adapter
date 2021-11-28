@@ -1,0 +1,23 @@
+{
+    "name": "Vue 3",
+    "npm": {
+        "scripts": {
+            "mix:dev": "mix",
+            "mix:prod": "mix --production",
+            "mix:watch": "mix watch"
+        },
+        "devDependencies": {
+            "@inertiajs/inertia": "^0.10.0",
+            "@inertiajs/inertia-vue3": "^0.5.1",
+            "@inertiajs/progress": "^0.2.6",
+            "@vue/compiler-sfc": "^3.0.5",
+            "axios": "^0.21",
+            "laravel-mix": "^6.0.6",
+            "lodash": "^4.17.19",
+            "postcss": "^8.2.13",
+            "postcss-import": "^14.0.1",
+            "vue": "^3.0.5",
+            "vue-loader": "^16.1.2"
+        }
+    }
+}

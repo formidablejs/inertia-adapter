@@ -1,0 +1,23 @@
+{
+    "name": "React",
+    "npm": {
+        "scripts": {
+            "mix:dev": "mix",
+            "mix:prod": "mix --production",
+            "mix:watch": "mix watch"
+        },
+        "devDependencies": {
+            "@babel/preset-react": "^7.16.0",
+            "@inertiajs/inertia": "^0.10.0",
+            "@inertiajs/inertia-react": "^0.7.1",
+            "@inertiajs/progress": "^0.2.6",
+            "axios": "^0.21",
+            "laravel-mix": "^6.0.6",
+            "lodash": "^4.17.19",
+            "postcss": "^8.2.13",
+            "postcss-import": "^14.0.1",
+            "react": "^17.0.2",
+    		"react-dom": "^17.0.2"
+        }
+    }
+}
