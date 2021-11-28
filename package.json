@@ -1,5 +1,5 @@
 {
-  "name": "@formidablejs/inertia-adapter",
+  "name": "@formidablejs/inertia",
   "version": "0.0.1",
   "license": "MIT",
   "devDependencies": {
