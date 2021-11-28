@@ -1,5 +1,6 @@
 {
     "name": "Vue 3",
+    "files": "./files",
     "npm": {
         "scripts": {
             "mix:dev": "mix",
