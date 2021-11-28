@@ -1,9 +1,12 @@
 import { FastifyReply } from '@formidablejs/framework'
-import { mix } from '@formidablejs/framework/lib/Support/Helpers'
+import { isEmpty } from '@formidablejs/framework/lib/Support/Helpers'
+import { isObject } from '@formidablejs/framework/lib/Support/Helpers'
+import { isString } from '@formidablejs/framework/lib/Support/Helpers'
+import { isNumber } from '@formidablejs/framework/lib/Support/Helpers'
 import { Request } from '@formidablejs/framework'
 import { version } from './Support/Helpers'
 import { view } from '@formidablejs/framework/lib/Support/Helpers'
-import type { View } from '@formidablejs/framework'
+import { View } from '@formidablejs/framework'
 
 export class InertiaResponse
 
@@ -15,6 +18,10 @@ export class InertiaResponse
 	prop _headers\Object = {}
 
 	def constructor component\String, props\Object = {}
+		if !isString component then throw new TypeError "component must be a String."
+
+		if !isEmpty(props) && !isObject(props) then throw new TypeError "props must be an Object."
+
 		self._component = component
 		self._props = props
 
@@ -22,26 +29,36 @@ export class InertiaResponse
 		new self(component, props)
 
 	def setRootView view\View
+		if !(view instanceof View) then throw new TypeError "view must be a valid View class."
+
 		self._rootView = view
 
 		self
 
 	def withViewData viewData\Object = {}
+		if !isObject(viewData) then throw new TypeError "viewData must be an Object."
+
 		self._viewData = viewData
 
 		self
 
 	def with props\Object = {}
+		if !isObject(props) then throw new TypeError "props must be an Object."
+
 		self._props = props
 
 		self
 
 	def setStatusCode statusCode\Number
+		if !isNumber(statusCode) then throw new TypeError "statusCode must be a number."
+
 		self._statusCode = statusCode
 
 		self
 
 	def headers headers\Object = {}
+		if !isObject(headers) then throw new TypeError "headers must be an Object."
+
 		self._headers = headers
 
 		self
