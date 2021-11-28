@@ -12,8 +12,8 @@ export class InertiaRedirect
 	static def make url\String = null
 		new self(url)
 
-	def with _props\Object = {}
-		self._props = _props
+	def with props\Object = {}
+		self._props = props
 
 		self
 
