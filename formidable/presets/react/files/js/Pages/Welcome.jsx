@@ -11,7 +11,7 @@ export default function Welcome({ formidableVersion, nodeVersion }) {
 				</div>
 
 				<div className="information">
-					Formidable v{ formidableVersion ?? "undefined"} (Node { nodeVersion ?? "undefined"})
+					Formidable v{ formidableVersion ?? "undefined" } (Node { nodeVersion ?? "undefined" })
 				</div>
 			</div>
 		</div>
