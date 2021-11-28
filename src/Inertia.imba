@@ -17,8 +17,7 @@ export class Inertia
 		self.redirect!.with(props)
 
 	static def lazy fn\Function
-		if !isFunction(fn)
-			throw new TypeError "callback must be a function."
+		if !isFunction(fn) then throw new TypeError "callback must be a function."
 
 		fn.isLazy = true
 
