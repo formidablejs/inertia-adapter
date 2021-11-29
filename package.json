@@ -13,8 +13,8 @@
     "imba:watch": "imbac -w src --output=lib --platform=node --clean",
     "ts:build": "tsc",
     "ts:watch": "tsc -w",
-    "test": "jest --roots=test",
-    "test:watch": "jest --watchAll --roots=test"
+    "test": "jest --roots=tests",
+    "test:watch": "jest --watchAll --roots=tests"
   },
   "devDependencies": {
     "@formidablejs/framework": "^0.7.2",
