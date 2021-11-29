@@ -1,8 +1,29 @@
 {
   "name": "@formidablejs/inertia",
   "version": "0.0.1",
+  "description": "The Formidable adapter for Inertia.js",
+  "author": "Donald Pakkies",
   "license": "MIT",
+  "bugs": "https://github.com/formidablejs/inertia-adapter/issues",
+  "repository": "https://github.com/formidablejs/inertia-adapter",
+  "scripts": {
+    "build": "npm run imba:build && npm run imba:build:temp && npm run ts:build",
+    "imba:build": "imbac src --output=lib --platform=node --format=cjs --clean",
+    "imba:build:temp": "imbac src --output=.temp --platform=node --clean",
+    "imba:watch": "imbac -w src --output=lib --platform=node --clean",
+    "ts:build": "tsc",
+    "ts:watch": "tsc -w",
+    "test": "jest --roots=test",
+    "test:watch": "jest --watchAll --roots=test"
+  },
   "devDependencies": {
-    "@formidablejs/framework": "^0.7.2"
+    "@formidablejs/framework": "^0.7.2",
+    "@formidablejs/mailer": "^0.2.0-alpha.1",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.10",
+    "imba": "^2.0.0-alpha.190",
+    "jest": "^27.3.1",
+    "supertest": "^6.1.6",
+    "typescript": "^4.5.2"
   }
 }
