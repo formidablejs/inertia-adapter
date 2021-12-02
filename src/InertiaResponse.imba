@@ -6,7 +6,7 @@ import { isNumber } from '@formidablejs/framework/lib/Support/Helpers'
 import { Request } from '@formidablejs/framework'
 import { version } from './Support/Helpers'
 import { view } from '@formidablejs/framework/lib/Support/Helpers'
-import { View } from '@formidablejs/framework'
+import type { View } from '@formidablejs/framework'
 
 export class InertiaResponse
 
@@ -29,14 +29,12 @@ export class InertiaResponse
 		new self(component, props)
 
 	def setRootView view\View
-		if !(view instanceof View) then throw new TypeError "view must be a valid View class."
-
 		self._rootView = view
 
 		self
 
 	def withViewData viewData\Object = {}
-		if !isObject(viewData) then throw new TypeError "viewData must be an Object."
+		if !isObject(viewData) then throw new TypeError "data must be an Object."
 
 		self._viewData = viewData
 
