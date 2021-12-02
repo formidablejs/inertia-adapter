@@ -50,7 +50,6 @@ export class InertiaResponse {
     handle(request: Request, reply: FastifyReply, propKeys: any, patialKeys: any): Promise<any>;
     [Ψ__init__]($$?: any): void;
 }
-import { View } from "@formidablejs/framework";
 import { Request } from "@formidablejs/framework";
 import { FastifyReply } from "@formidablejs/framework";
 declare const Ψ__init__: unique symbol;
