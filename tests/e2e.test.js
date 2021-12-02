@@ -12,9 +12,9 @@ describe('e2e', () => {
 
     afterAll(async () => await app.close());
 
-	it('GET: /', () => {
-		return request(app.server)
-			.get('/')
-			.expect(200);
+	it('GET: /', async () => {
+		const res = await request(app.server).get('/');
+
+        expect(res.text).toContain('data-page=');
 	});
 })
