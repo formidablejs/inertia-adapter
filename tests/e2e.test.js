@@ -16,5 +16,9 @@ describe('e2e', () => {
 		const res = await request(app.server).get('/');
 
         expect(res.text).toContain('data-page=');
+        expect(res.text).toContain('version');
+        expect(res.text).toContain('component');
+        expect(res.text).toContain('props');
+        expect(res.text).toContain('url');
 	});
 })
