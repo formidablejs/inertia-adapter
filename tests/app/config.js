@@ -13,15 +13,11 @@ module.exports.Config = class extends ConfigRepository {
                 key: 'base64:VVF3bzFhamhPbG11aUR4cEZraUFjejJzZUJVZTRjS046NzhhNmVjYTY0NjdiNGViZg==',
                 cipher: 'AES-256-CBC',
                 resolvers: [
-                    require('@formidablejs/framework').RedisServiceResolver,
                     require('@formidablejs/framework').CookieServiceResolver,
                     require('@formidablejs/framework').SessionMemoryStoreServiceResolver,
                     require('@formidablejs/framework').SessionFileStoreServiceResolver,
                     require('@formidablejs/framework').SessionServiceResolver,
                     require('@formidablejs/framework').HashServiceResolver,
-                    require('@formidablejs/framework').LanguageServiceResolver,
-                    require('@formidablejs/framework').CsrfServiceResolver,
-                    require('@formidablejs/framework').CorsServiceResolver,
                     require('./resolvers/RouterServiceResolver').RouterServiceResolver,
                     require('../../lib').InertiaServiceResolver,
                 ]

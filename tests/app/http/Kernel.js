@@ -24,9 +24,6 @@ module.exports.Kernel = class extends HttpKernel {
     }
 
 	get routeMiddleware() {
-		return {
-			'auth': Authenticate,
-			'signed': ValidateSignature,
-		};
+		return { };
     }
 }
