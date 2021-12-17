@@ -126,4 +126,4 @@ export class InertiaResponse
 		const encodedPageString = JSON.stringify(page).replace(/'/g, '&quot;').replace(/'/g, '&#039;')
 
 		return view(self._rootView, Object.assign(self._viewData, { dataPage: encodedPageString }))
-			.toView(reply)
+			.toView(request, reply)
