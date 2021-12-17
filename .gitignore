@@ -1,5 +1,9 @@
 /node_modules
+/public
 /.temp
+/output
+.env
+.env.backup
 npm-debug.log
 yarn-error.log
 *.tgz
