@@ -18,6 +18,7 @@ module.exports.Config = class extends ConfigRepository {
                     require('@formidablejs/framework').SessionFileStoreServiceResolver,
                     require('@formidablejs/framework').SessionServiceResolver,
                     require('@formidablejs/framework').HashServiceResolver,
+                    require('@formidablejs/framework').LanguageServiceResolver,
                     require('./resolvers/RouterServiceResolver').RouterServiceResolver,
                     require('../../lib').InertiaServiceResolver,
                 ]
