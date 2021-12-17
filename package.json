@@ -4,6 +4,9 @@
   "description": "The Formidable adapter for Inertia.js",
   "author": "Donald Pakkies",
   "license": "MIT",
+  "main": "lib/index.js",
+  "types": "types/index.d.ts",
+  "publisher": "formidable/Package.js",
   "bugs": "https://github.com/formidablejs/inertia-adapter/issues",
   "repository": "https://github.com/formidablejs/inertia-adapter",
   "scripts": {
@@ -15,6 +18,9 @@
     "ts:watch": "tsc -w",
     "test": "jest --roots=tests",
     "test:watch": "jest --watchAll --roots=tests"
+  },
+  "peerDependencies": {
+    "@formidablejs/framework": "0.8.x"
   },
   "devDependencies": {
     "@formidablejs/framework": "^0.8.2",
