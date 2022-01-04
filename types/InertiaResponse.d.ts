@@ -45,6 +45,13 @@ export class InertiaResponse {
     resolveValidationErrors(request: Request): any;
     /**
     @param {Request} request
+    */
+    resolveRootViewProps(request: Request): {
+        locale: any;
+        flash: any;
+    };
+    /**
+    @param {Request} request
     @param {FastifyReply} reply
     */
     handle(request: Request, reply: FastifyReply, propKeys: any, patialKeys: any): Promise<any>;
