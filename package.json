@@ -1,6 +1,6 @@
 {
   "name": "@formidablejs/inertia",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The Formidable adapter for Inertia.js",
   "author": "Donald Pakkies",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "test:watch": "jest --watchAll --roots=tests"
   },
   "peerDependencies": {
-    "@formidablejs/framework": "0.8.x"
+    "@formidablejs/framework": "0.9.x"
   },
   "devDependencies": {
     "@formidablejs/framework": "^0.8.2",
