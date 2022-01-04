@@ -1,11 +1,14 @@
+import { encrypt } from '@formidablejs/framework/lib/Support/Helpers'
 import { FastifyReply } from '@formidablejs/framework'
 import { isEmpty } from '@formidablejs/framework/lib/Support/Helpers'
+import { isNumber } from '@formidablejs/framework/lib/Support/Helpers'
 import { isObject } from '@formidablejs/framework/lib/Support/Helpers'
 import { isString } from '@formidablejs/framework/lib/Support/Helpers'
-import { isNumber } from '@formidablejs/framework/lib/Support/Helpers'
 import { Request } from '@formidablejs/framework'
+import { strRandom } from '@formidablejs/framework/lib/Support/Helpers'
 import { version } from './Support/Helpers'
 import { view } from '@formidablejs/framework/lib/Support/Helpers'
+import { without } from '@formidablejs/framework/lib/Support/Helpers'
 import type { View } from '@formidablejs/framework'
 
 export class InertiaResponse
@@ -71,7 +74,7 @@ export class InertiaResponse
 		return shared
 
 	def resolveValidationErrors request\Request
-		if !request.request.session._errors then return {}
+		if !request.request.session._errors then return { errors: {} }
 
 		const errors = request.request.session._errors
 
@@ -79,8 +82,22 @@ export class InertiaResponse
 
 		return errors
 
+	def resolveRootViewProps request\Request
+		const rootViewProps = {
+			locale: request.locale!
+			flash: without(request.req.session._flashed ?? {}, ['_old'])
+		}
+
+		delete request.req.session._flashed
+
+		return rootViewProps
+
 	def handle request\Request, reply\FastifyReply, propKeys, patialKeys
 		if request.isMethod('GET') && request.hasHeader('x-inertia') && request.header('x-inertia-version') !== version!
+			request.req.session._shared = {}
+			request.req.session._flashed = {}
+			request.req.session._errors = {}
+
 			return reply
 				.status(400)
 				.header('X-Inertia-Location', request.url!)
@@ -89,6 +106,7 @@ export class InertiaResponse
 		const props = {
 			...self.resolveSharedProps(request)
 			...self.resolveValidationErrors(request)
+			...self.resolveRootViewProps(request)
 		}
 
 		if request.hasHeader('x-inertia-partial-data') && request.header('-inertia-partial-component') === self._component
