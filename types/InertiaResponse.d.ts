@@ -47,7 +47,7 @@ export class InertiaResponse {
     @param {Request} request
     */
     resolveRootViewProps(request: Request): {
-        locale: any;
+        locale: String;
         flash: any;
     };
     /**
