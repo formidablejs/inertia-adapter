@@ -47,7 +47,7 @@ export class InertiaResponse {
     @param {Request} request
     */
     resolveRootViewProps(request: Request): {
-        locale: String;
+        locale: any;
         flash: any;
     };
     /**
@@ -55,9 +55,11 @@ export class InertiaResponse {
     @param {FastifyReply} reply
     */
     handle(request: Request, reply: FastifyReply, propKeys: any, patialKeys: any): Promise<any>;
-    [Ψ__init__]($$?: any): void;
+    [$2]($$?: {}): void;
+    [$1]($$?: any): void;
 }
 import { Request } from "@formidablejs/framework";
 import { FastifyReply } from "@formidablejs/framework";
-declare const Ψ__init__: unique symbol;
+declare const $2: unique symbol;
+declare const $1: unique symbol;
 export {};
