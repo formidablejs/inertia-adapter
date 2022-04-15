@@ -25,8 +25,10 @@
   "devDependencies": {
     "@formidablejs/framework": "^0.10.6",
     "@formidablejs/mailer": "^0.3.0",
+    "@formidablejs/stubs": "^0.2.6",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.24",
+    "imba-shell": "^0.4.0",
     "imba": "^2.0.0-alpha.207",
     "jest": "^27.5.1",
     "supertest": "^6.2.2",
