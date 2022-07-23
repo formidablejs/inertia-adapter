@@ -1,0 +1,67 @@
+/* ./resources/css/app.css */
+
+.container {
+  position: relative;
+  display: flex;
+  justify-items: center;
+  min-height: 100vh;
+  background: #f4f4f5;
+  align-items: center;
+}
+
+.container .content {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container .content .logo {
+  text-align: center;
+  padding-top: 0.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.container .content .logo img {
+  width: 8.75rem;
+}
+
+.container .content .welcome {
+  margin-bottom: 2.5rem;
+}
+
+.container .content .welcome h4 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.container .content .information {
+  margin-left: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+  color: hsla(240, 3.83%, 46.08%, 100%);
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .container .content .logo {
+    padding-top: 0rem;
+  }
+
+  .container .content .information {
+    margin-left: 0rem;
+  }
+}
