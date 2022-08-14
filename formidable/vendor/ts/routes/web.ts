@@ -13,7 +13,7 @@ import { Route } from '@formidablejs/framework';
  */
 
 Route.get('/', (request: Request) => {
-	Inertia.render('Welcome', {
+	return Inertia.render('Welcome', {
 		formidableVersion: request.version,
 		nodeVersion: process.version
 	}).withViewData({
