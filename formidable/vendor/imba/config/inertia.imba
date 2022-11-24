@@ -10,4 +10,13 @@ export default {
 
 	rootView: App
 
+	# --------------------------------------------------------------------------
+	# Laravel Mix Command
+	# --------------------------------------------------------------------------
+	#
+	# Command that runs to execute Laravel Mix when Formidable is in development
+	# mode.
+
+	mix: "npm run mix:watch"
+
 }
