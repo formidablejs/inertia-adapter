@@ -1,5 +1,10 @@
 /* ./resources/css/app.css */
 
+body {
+  margin: 0;
+  font-family: Nunito;
+}
+
 .container {
   position: relative;
   display: flex;
