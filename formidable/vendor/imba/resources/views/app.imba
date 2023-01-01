@@ -13,7 +13,7 @@ export class App < View
 				<title> get('title', config('app.name'))
 
 				# fonts
-				<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap'>
+				<link rel='stylesheet' href='https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap'>
 
 				# styles
 				<style src='./app'>
