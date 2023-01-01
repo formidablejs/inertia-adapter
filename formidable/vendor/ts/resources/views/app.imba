@@ -22,5 +22,5 @@ export class App < View
 				# scripts
 				<script src=mix('/js/app.js') defer>
 
-			<body[m:0 ff:Nunito]>
+			<body>
 				<div id='app' data-page=get('dataPage')>
