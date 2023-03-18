@@ -10,18 +10,19 @@ import { FastifyReply } from '@formidablejs/framework'
 import { isEmpty } from '@formidablejs/framework/lib/Support/Helpers'
 
 const state = {
+	follow: false,
 	running: false
 }
 
 export class InertiaServiceResolver < ServiceResolver
 
-	def boot
+	def boot\void
 		self.enableInertia!
 
 		if self.app.config.get('inertia.mix')
 			self.enableMix self.app.config.get('inertia.mix')
 
-	def enableInertia
+	def enableInertia\void
 		self.app.onResponse do(response\InertiaResponse|InertiaRedirect|ValidationException, request\Request, reply\FastifyReply)
 			if !(response instanceof InertiaResponse || response instanceof InertiaRedirect || response instanceof ValidationException)
 				return
@@ -47,40 +48,40 @@ export class InertiaServiceResolver < ServiceResolver
 
 			response.handle(request, reply)
 
-	def enableMix script\string
-		self.app.addHook 'onReady', do
-			if !state.running && process.env.IMBA_CLUSTER == ''
-				return
+	def enableMix\void script\string
+		self.app.onServeInjection do(options)
+			# ignore if server is not in development mode.
+			if !options.dev then return
 
-			state.running = true
-
-			const mix = exec(script, {
+			# start laravel mix.
+			const mix = exec("{script} --ansi", {
 				cwd: process.cwd(),
 				stdio: 'pipe',
 			})
 
+			# print output.
 			mix.stdout.on 'data', do(data)
 				const line = data.toString()
 
 				if line.startsWith('✔ Mix: Compiled with some errors')
 					state.follow = true
 					process.stderr.write(line)
-
 				elif state.follow && !line.startsWith('✔ Mix: Compiled with some errors')
 					state.follow = false
 					process.stderr.write(line)
-
 				elif line.startsWith('WARNING in ')
-					process.stderr.write(line)
-
+					process.stderr.write(options.noAnsi ? line : "\x1b[33m{line}\x1b[0m")
 				elif line.startsWith('✔ Mix: Compiled successfully')
-					process.stdout.write(line)
+					process.stdout.write(options.noAnsi ? line : "\x1b[32m{line}\x1b[0m")
 
+			# print error output.
 			mix.stderr.on 'data', do(data)
 				process.stderr.write(data.toString())
 
+			# kill laravel mix on SIGINT.
 			process.on 'SIGINT', do
 				mix.kill 'SIGINT'
 
+			# kill laravel mix on SIGTERM.
 			process.on 'SIGTERM', do
 				mix.kill 'SIGTERM'
