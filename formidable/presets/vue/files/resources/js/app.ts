@@ -1,17 +1,18 @@
 require('./bootstrap');
 
-import React from 'react'
-import { render } from 'react-dom'
-import { createInertiaApp } from '@inertiajs/inertia-react'
+import { createApp, h } from 'vue';
+import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Formidable';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
-    resolve: (name) => require(`./Pages/${name}`),
-    setup({ el, App, props }) {
-        render(<App {...props} />, el)
+    resolve: (name) => import(`./Pages/${name}.vue`),
+    setup({ el, app, props, plugin }) {
+        createApp({ render: () => h(app, props) })
+            .use(plugin)
+            .mount(el);
     },
 });
 

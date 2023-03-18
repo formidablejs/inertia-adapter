@@ -1,4 +1,9 @@
-export default function Welcome({ formidableVersion, nodeVersion }) {
+type WelcomeProps = {
+	formidableVersion?: string
+	nodeVersion?: string
+}
+
+export default function Welcome({ formidableVersion, nodeVersion }: WelcomeProps) {
 	return (
 		<div className="container">
 			<div className="content">

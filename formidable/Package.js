@@ -6,6 +6,11 @@ exports.Package = class Package {
             )
 
         return {
+            common: {
+                paths: {
+                    './': './formidable/common'
+                }
+            },
             vendor: {
                 paths: {
                     './': `./formidable/vendor/${path}`,

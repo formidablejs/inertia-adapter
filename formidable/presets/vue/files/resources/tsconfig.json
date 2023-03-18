@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "jsx": "preserve",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "module": "esnext",
+        "moduleResolution": "node",
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "strict": true,
+        "target": "esnext",
+        "types": [ "node" ],
+        "paths": {
+            "@/*": [ "js/*" ]
+        }
+    },
+    "include": [
+        "../node_modules/@formidablejs/inertia/types",
+        "../app/Types/Forms",
+        "js/**/*.ts",
+        "js/**/*.d.ts",
+        "js/**/*.vue"
+    ]
+}
