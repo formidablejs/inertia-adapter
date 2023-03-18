@@ -1,0 +1,121 @@
+/* ./resources/css/app.css */
+
+body {
+	margin: 0;
+	font-family: Nunito;
+}
+
+.container {
+	position: relative;
+	display: flex;
+	justify-items: center;
+	min-height: 100vh;
+	align-items: center;
+}
+
+.container .content {
+	max-width: 72rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container .content .logo {
+	display: flex;
+	gap: 2rem;
+	justify-content: center;
+	align-items: center;
+	padding-top: 0.25rem;
+	margin-bottom: 2.5rem;
+}
+
+.container .content .logo img::after {
+	content: "+";
+}
+
+.container .content .logo img {
+	width: 8.75rem;
+}
+
+.container .content .logo p {
+	color: #b9b7ef;
+	font-size: 8rem;
+	margin: 0;
+}
+
+.container .content .welcome {
+	margin-bottom: 2.5rem;
+}
+
+.container .content .welcome h4 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+	font-weight: lighter;
+	text-align: center;
+}
+
+.container .content .information {
+	margin-left: 1.25rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	text-align: center;
+	color: hsla(240, 3.83%, 46.08%, 100%);
+}
+
+.container .content .counter {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 2rem;
+}
+
+.container .content .counter button {
+	background: #fff;
+	border: 1px solid;
+	border-radius: 4px;
+	padding: 5px;
+	font-size: 1.1rem;
+	cursor: pointer;
+}
+
+.container .content .counter button {
+	border-color: #5d57ff;
+	color: #5d57ff;
+}
+
+.container .content .counter button:active {
+	border-color: #4a45ed;
+	background: #e6e6ed;
+}
+
+.container .content ul.links {
+	display: flex;
+	justify-content: center;
+	list-style-type: none;
+	padding: 0;
+}
+
+.container .content ul.links li {
+	display: inline-block;
+	margin: 0 10px;
+}
+
+@media (min-width: 1024px) {
+	.container {
+		padding-right: 2rem;
+		padding-left: 2rem;
+	}
+}
+
+@media (min-width: 640px) {
+	.container {
+		padding-right: 1.5rem;
+		padding-left: 1.5rem;
+	}
+
+	.container .content .logo {
+		padding-top: 0rem;
+	}
+
+	.container .content .information {
+		margin-left: 0rem;
+	}
+}

@@ -1,6 +1,6 @@
-import { Inertia } from '@formidablejs/inertia';
-import { Request } from '@formidablejs/framework';
-import { Route } from '@formidablejs/framework';
+import { Inertia } from '@formidablejs/inertia'
+import { Request } from '@formidablejs/framework'
+import { Route } from '@formidablejs/framework'
 
 /**
  * --------------------------------------------------------------------------
@@ -17,6 +17,6 @@ Route.get('/', (request: Request) => {
 		formidableVersion: request.version,
 		nodeVersion: process.version
 	}).withViewData({
-		locale: request.locale!
-	});
-});
+		locale: request.locale()
+	})
+})
