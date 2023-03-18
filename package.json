@@ -10,7 +10,7 @@
   "bugs": "https://github.com/formidablejs/inertia-adapter/issues",
   "repository": "https://github.com/formidablejs/inertia-adapter",
   "scripts": {
-    "build": "npm run imba:build && npm run imba:build:temp && npm run ts:build",
+    "build": "npm run imba:build",
     "imba:build": "imbac src --output=lib --platform=node --format=cjs --clean",
     "imba:build:temp": "imbac src --output=.temp --platform=node --clean",
     "imba:watch": "imbac -w src --output=lib --platform=node --clean",
@@ -23,13 +23,13 @@
     "@formidablejs/framework": ">=0.13.8"
   },
   "devDependencies": {
-    "@formidablejs/framework": "^0.11.10",
-    "@formidablejs/mailer": "^0.3.1",
-    "@formidablejs/stubs": "^0.2.8",
+    "@formidablejs/framework": "^0.15.0",
+    "@formidablejs/mailer": "^0.4.0",
+    "@formidablejs/stubs": "^0.5.0",
     "@types/jest": "^28.1.6",
     "@types/node": "^18.0.6",
     "imba-shell": "^0.4.0",
-    "imba": "^2.0.0-alpha.212",
+    "imba": "2.0.0-alpha.215",
     "jest": "^28.1.3",
     "supertest": "^6.2.4",
     "typescript": "^4.7.4"
