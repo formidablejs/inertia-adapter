@@ -22,7 +22,7 @@ export class InertiaRedirect {
     @param {Request} request
     @param {FastifyReply} reply
     */
-    handle(request: Request, reply: FastifyReply): FastifyReply<import("http").Server, import("http").IncomingMessage, import("http").ServerResponse, import("fastify/types/route").RouteGenericInterface, any>;
+    handle(request: Request, reply: FastifyReply): FastifyReply<import("fastify").RawServerDefault, import("http").IncomingMessage, import("http").ServerResponse<import("http").IncomingMessage>, import("fastify/types/route").RouteGenericInterface, any>;
     [$__patch__$]($$?: {}): void;
     [$__init__$]($$?: any, deep?: boolean): void;
 }

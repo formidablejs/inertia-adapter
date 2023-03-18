@@ -1,9 +1,16 @@
 export class InertiaServiceResolver extends ServiceResolver {
-    boot(): import("@formidablejs/framework").Application;
-    enableInertia(): import("@formidablejs/framework").Application;
+    /**
+    @returns { void }
+    */
+    boot(): void;
+    /**
+    @returns { void }
+    */
+    enableInertia(): void;
     /**
     @param {string} script
+    @returns { void }
     */
-    enableMix(script: string): import("@formidablejs/framework").Application;
+    enableMix(script: string): void;
 }
 import { ServiceResolver } from "@formidablejs/framework";
