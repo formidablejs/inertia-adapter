@@ -7,6 +7,7 @@ import { ValidationException } from '@formidablejs/framework'
 import { Redirect } from '@formidablejs/framework'
 import { Request } from '@formidablejs/framework'
 import { FastifyReply } from '@formidablejs/framework'
+import { Output } from '@formidablejs/console'
 import { isEmpty } from '@formidablejs/framework/lib/Support/Helpers'
 
 const state = {
@@ -52,6 +53,8 @@ export class InertiaServiceResolver < ServiceResolver
 		self.app.onServeInjection do(options)
 			# ignore if server is not in development mode.
 			if !options.dev then return
+
+			Output.write(options.noAnsi ? '   INFO  Compiling assets…\n' : '  <bg:blue> INFO </bg:blue> Compiling assets…\n')
 
 			# start laravel mix.
 			const mix = exec("{script} --ansi", {
