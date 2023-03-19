@@ -29,19 +29,19 @@ export default function Welcome({ formidableVersion, nodeVersion }: WelcomeProps
 
                 <ul className="links">
 					<li>
-						<a href="https://formidablejs.org/"target="_blank" rel="noopener"> Formidable </a>
+						<a href="https://formidablejs.org/" target="_blank" rel="noopener"> Formidable </a>
 					</li>
 
 					<li>
-						<a href="https://react.dev/"target="_blank" rel="noopener"> React </a>
+						<a href="https://react.dev/" target="_blank" rel="noopener"> React </a>
 					</li>
 
 					<li>
-						<a href="https://github.com/formidablejs"target="_blank" rel="noopener"> Github </a>
+						<a href="https://github.com/formidablejs" target="_blank" rel="noopener"> Github </a>
 					</li>
 
 					<li>
-						<a href="https://twitter.com/formidablejs"target="_blank" rel="noopener"> Twitter </a>
+						<a href="https://twitter.com/formidablejs" target="_blank" rel="noopener"> Twitter </a>
 					</li>
 				</ul>
 
