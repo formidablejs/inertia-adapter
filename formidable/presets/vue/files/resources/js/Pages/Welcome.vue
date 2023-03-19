@@ -36,19 +36,19 @@ const setCounter = (value: number): void => {
 
       <ul className="links">
         <li>
-          <a href="https://formidablejs.org/"target="_blank" rel="noopener"> Formidable </a>
+          <a href="https://formidablejs.org/" target="_blank" rel="noopener"> Formidable </a>
         </li>
 
         <li>
-          <a href="https://vuejs.org/"target="_blank" rel="noopener"> Vue </a>
+          <a href="https://vuejs.org/" target="_blank" rel="noopener"> Vue </a>
         </li>
 
         <li>
-          <a href="https://github.com/formidablejs"target="_blank" rel="noopener"> Github </a>
+          <a href="https://github.com/formidablejs" target="_blank" rel="noopener"> Github </a>
         </li>
 
         <li>
-          <a href="https://twitter.com/formidablejs"target="_blank" rel="noopener"> Twitter </a>
+          <a href="https://twitter.com/formidablejs" target="_blank" rel="noopener"> Twitter </a>
         </li>
       </ul>
 
