@@ -21,7 +21,8 @@
         "../node_modules/@formidablejs/inertia/types",
         "../app/Types/Forms",
         "js/**/*.d.ts",
-        "js/**/*.ts",
-        "js/**/*.vue"
+        "js/**/*.js",
+        "js/**/*.svelte",
+        "js/**/*.ts"
     ]
 }

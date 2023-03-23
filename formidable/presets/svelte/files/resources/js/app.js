@@ -1,18 +1,16 @@
 require('./bootstrap');
 
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { createInertiaApp } from '@inertiajs/inertia-react';
+import { createInertiaApp } from '@inertiajs/svelte';
 import { InertiaProgress } from '@inertiajs/progress';
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Formidable';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
-    resolve: (name) => import(`./Pages/${name}`),
+    resolve: (name) => import(`./Pages/${name}.svelte`),
     setup({ el, App, props }) {
-        createRoot(el).render(<App {...props} />)
+        new App({ target: el, props })
     },
 });
 
-InertiaProgress.init({ color: '#4B5563' })
+InertiaProgress.init({ color: '#4B5563' });

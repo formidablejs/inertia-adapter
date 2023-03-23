@@ -57,7 +57,7 @@ export class InertiaServiceResolver < ServiceResolver
 			Output.write(options.noAnsi ? '   INFO  Compiling assets…\n' : '  <bg:blue> INFO </bg:blue> Compiling assets…\n')
 
 			# start laravel mix.
-			const mix = exec("{script} --ansi", {
+			const mix = exec(script, {
 				cwd: process.cwd(),
 				stdio: 'pipe',
 			})

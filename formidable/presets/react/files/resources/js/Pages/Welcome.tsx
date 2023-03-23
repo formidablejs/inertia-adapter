@@ -1,8 +1,8 @@
-import { useState } from "react"
+import { useState } from 'react';
 
 type WelcomeProps = {
-	formidableVersion?: string
-	nodeVersion?: string
+	formidableVersion?: string;
+	nodeVersion?: string;
 }
 
 export default function Welcome({ formidableVersion, nodeVersion }: WelcomeProps) {
@@ -12,9 +12,9 @@ export default function Welcome({ formidableVersion, nodeVersion }: WelcomeProps
 		<div className="container">
 			<div className="content">
 				<div className="logo">
-					<img src="/formidable.png" />
+					<img src="/formidable.png" alt="Formidable Logo" />
 					<p>+</p>
-					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Logo" />
 				</div>
 
 				<div className="welcome">
