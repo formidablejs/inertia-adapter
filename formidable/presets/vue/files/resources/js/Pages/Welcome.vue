@@ -7,21 +7,15 @@ defineProps({
 });
 
 const counter = ref(0);
-
-const setCounter = (value: number): void => {
-  counter.value = value;
-};
 </script>
 
 <template>
   <div class="container">
     <div class="content">
       <div class="logo">
-        <img src="/formidable.png" />
+        <img src="/formidable.png" alt="Formidable Logo" />
         <p>+</p>
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
-        />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue Logo" />
       </div>
 
       <div class="welcome">
@@ -29,7 +23,7 @@ const setCounter = (value: number): void => {
       </div>
 
       <div class="counter">
-        <button @click="setCounter(counter + 1)">
+        <button @click="counter++">
           Clicked {{ counter }} times
         </button>
       </div>
