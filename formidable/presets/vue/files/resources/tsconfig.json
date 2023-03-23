@@ -20,8 +20,8 @@
     "include": [
         "../node_modules/@formidablejs/inertia/types",
         "../app/Types/Forms",
-        "js/**/*.ts",
         "js/**/*.d.ts",
+        "js/**/*.ts",
         "js/**/*.vue"
     ]
 }
