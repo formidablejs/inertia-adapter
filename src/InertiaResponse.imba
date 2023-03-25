@@ -74,18 +74,17 @@ export class InertiaResponse
 		return shared
 
 	def resolveValidationErrors request\Request
-		if !request.request.session._errors then return { errors: {} }
+		if !(request.request.session && request.request.session._flashed && request.request.session._flashed._errors)
+			return { errors: {} }
 
-		const errors = request.request.session._errors
+		const errors = request.request.session._flashed._errors
 
-		delete request.request.session._errors
-
-		return errors
+		return { errors }
 
 	def resolveRootViewProps request\Request
 		const rootViewProps = {
 			locale: request.locale!
-			flash: without(request.req.session._flashed ?? {}, ['_old'])
+			flash: without(request.req.session._flashed ?? {}, ['_old', '_errors'])
 		}
 
 		delete request.req.session._flashed
