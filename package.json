@@ -1,6 +1,6 @@
 {
   "name": "@formidablejs/inertia",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "The Formidable adapter for Inertia.js",
   "author": "Donald Pakkies",
   "license": "MIT",
