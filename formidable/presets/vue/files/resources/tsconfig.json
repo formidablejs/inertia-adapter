@@ -14,7 +14,8 @@
         "target": "esnext",
         "types": [ "node" ],
         "paths": {
-            "@/*": [ "js/*" ]
+            "@/*": [ "js/*" ],
+            "@forms/*": [ "../app/Types/Forms/*" ],
         }
     },
     "include": [
