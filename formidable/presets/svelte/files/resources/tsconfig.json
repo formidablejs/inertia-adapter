@@ -19,7 +19,6 @@
         }
     },
     "include": [
-        "../node_modules/@formidablejs/inertia/types",
         "../app/Types/**/*.ts",
         "js/**/*.d.ts",
         "js/**/*.js",
