@@ -100,7 +100,6 @@ export class InertiaResponse
 			return reply
 				.status(400)
 				.header('X-Inertia-Location', request.url!)
-				.sent = true
 
 		const props = {
 			...self.resolveSharedProps(request)
@@ -138,7 +137,6 @@ export class InertiaResponse
 				})
 				.status(self._statusCode)
 				.send(JSON.stringify(page))
-				.sent = true
 
 		const encodedPageString = JSON.stringify(page).replace(/'/g, '&quot;').replace(/'/g, '&#039;')
 
